@@ -20,17 +20,15 @@ const PokemonCard = (props) => {
             })
     }, [pokemon.url]);
 
-    const cardColor = {
-        backgroundColor: colors[color],
-    };
+    const pokemonColor = colors[color];
 
     return(
         <>
             {(typeof stats != 'undefined') ? 
-                <div className="card" style={cardColor}>
+                <div className="card" style={{borderColor: pokemonColor}}>
                     <p className="topCard">
-                        <span className="nome">{pokemon.name}</span>
-                        <span className="id">Nº {stats.id}</span>
+                        <span className="nome" style={{color: pokemonColor}}>{pokemon.name}</span>
+                        <span className="id" style={{backgroundColor: pokemonColor}}>Nº {stats.id}</span>
                     </p>
                     <img src={stats.sprites.other["official-artwork"].front_default} alt={stats.sprites.front_default} />
                     <p className="tipos">
