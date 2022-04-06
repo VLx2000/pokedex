@@ -1,0 +1,53 @@
+.card {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+    border-radius: 14px !important;
+    border: solid 14px #f8d331 !important;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.24);
+    transition: .1s;
+    cursor: pointer;
+}
+
+.topCard {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 4px;
+    margin-inline: 10px;
+    font-size: 1.5em;
+}
+
+.nome {
+    font-style: italic;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.id {
+    font-style: italic;
+}
+
+.tipos {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.tipo {
+    margin-inline: 4px;
+    padding: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.219);
+    border-radius: 10px;
+    border: solid 3px rgba(0, 0, 0, 0.199);
+}
+
+.stats {
+    list-style-type:lower-alpha;
+    height: 60px;
+}
+
+img {
+    /* border: solid 2px rgba(0, 0, 0, 0.151); */
+    margin-inline: 10px;
+}
