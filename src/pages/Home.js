@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import PokemonCard from "../components/PokemonCard";
 import './Home.css';
+import Navbar from "../components/Navbar";
 
 function Home() {
 
@@ -49,6 +50,7 @@ function Home() {
     
     return(
         <div id="home">
+            <Navbar />
             <div className="container">
                 <div className="row">
                     {typeof lista_pokemon.results != 'undefined' ? lista_pokemon.results.map(pokemon => (

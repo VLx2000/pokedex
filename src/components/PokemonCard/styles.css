@@ -1,9 +1,10 @@
 .card {
-    background-image: url(../../../public/fundo_card.jpg);
-    background-position: center;
+    /* background-image: url(../../../public/fundo_card.jpg);
+    background-position: center; */
+    background-color: #f2f2f2 !important;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.514);
     border-radius: 14px !important;
-    border-width: 8px !important;
+    border-width: 5px !important;
     margin-bottom: 30px;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
@@ -21,7 +22,6 @@
 }
 
 .nome {
-    font-style: italic;
     font-weight: bold;
     text-transform: capitalize;
     padding-block: 4px;
@@ -47,14 +47,4 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.219);
     border-radius: 10px;
     border: solid 3px rgba(0, 0, 0, 0.199);
-}
-
-.stats {
-    list-style-type:lower-alpha;
-    height: 60px;
-}
-
-img {
-    /* border: solid 2px rgba(0, 0, 0, 0.151); */
-    margin-inline: 10px;
 }

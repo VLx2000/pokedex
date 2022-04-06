@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './index.css';
+import './styles.css';
 import { colors } from "../../utils/poke_colors";
 
 const PokemonCard = (props) => {
@@ -28,7 +28,7 @@ const PokemonCard = (props) => {
                 <div className="card" style={{borderColor: pokemonColor}}>
                     <p className="topCard">
                         <span className="nome" style={{color: pokemonColor}}>{pokemon.name}</span>
-                        <span className="id" style={{backgroundColor: pokemonColor}}>Nº {stats.id}</span>
+                        <span className="id" style={{backgroundColor: pokemonColor}}>#{stats.id}</span>
                     </p>
                     <img src={stats.sprites.other["official-artwork"].front_default} alt={stats.sprites.front_default} />
                     <p className="tipos">
