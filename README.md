@@ -1,6 +1,4 @@
-# Pokedex
-> Uma pokedex em React que utiliza a API https://pokeapi.co/
+# Pokédex
+> Uma pokédex em React que utiliza [PokeAPI](https://pokeapi.co/)
 
-## Execute:
-
-`npm start`
+## [Link](https://vlx2000.github.io/pokedex/)
