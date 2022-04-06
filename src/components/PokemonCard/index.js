@@ -14,7 +14,7 @@ const PokemonCard = (props) => {
             .get(pokemon.url)
             .then(response => {
                 const data = response.data;
-                console.log(data);
+                //console.log(data);
                 setStat(data);
                 setColor(data.types[0].type.name)
             })
@@ -32,7 +32,7 @@ const PokemonCard = (props) => {
                         <span className="nome">{pokemon.name}</span>
                         <span className="id">Nº {stats.id}</span>
                     </p>
-                    <img src={stats.sprites.other["official-artwork"].front_default} alt="" />
+                    <img src={stats.sprites.other["official-artwork"].front_default} alt={stats.sprites.front_default} />
                     <p className="tipos">
                         {(stats.types.map(types =>  
                             <span className="tipo" key={types.type.name} style={{backgroundColor: colors[types.type.name]}}>{types.type.name}</span>
@@ -40,7 +40,7 @@ const PokemonCard = (props) => {
                     </p>
                 </div>
             :   
-                <div>Carregando...</div>
+                <div>Carregando Pokemon...</div>
             }
         </>
     )

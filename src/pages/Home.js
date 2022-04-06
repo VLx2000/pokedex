@@ -18,7 +18,11 @@ function Home() {
             })
             .then(response => {
                 const data = response.data;
-                //console.log(data);
+                //console.log(data.results.length);
+                if (data.results.length > 1200){
+                  document.getElementById('loading').innerHTML = "Os Pokemon acabaram";
+                  return;
+                }
                 setLista_pokemon(data);
             });
     }, [currentPage]);
@@ -53,9 +57,9 @@ function Home() {
                         </div>
                     ))
                     :
-                        <div>Carregando...</div>
+                        <div>Carregando Pokemon...</div>
                     }
-                    <p ref={loaderRef}>Carregando...</p>
+                    <p id="loading" ref={loaderRef}>Carregando Pokemon...</p>
                 </div>
             </div>
         </div>
