@@ -4,5 +4,10 @@
 }
 
 #home > .container {
-    margin-block: 40px;
+    margin-top: 40px;
+}
+
+#resultados {
+    text-align: center;
+    margin-block: 30px;
 }
