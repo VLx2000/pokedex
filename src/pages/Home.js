@@ -3,6 +3,7 @@ import axios from "axios";
 import PokemonCard from "../components/PokemonCard";
 import './Home.css';
 import Navbar from "../components/Navbar";
+import PokeballGif from '../assets/pokeball.gif';
 
 function Home() {
 
@@ -59,9 +60,9 @@ function Home() {
                         </div>
                     ))
                     :
-                        <div>Carregando Pokemon...</div>
+                        <div>Não foram achados Pokemon :(</div>
                     }
-                    <p id="loading" ref={loaderRef}>Carregando Pokemon...</p>
+                    <p id="loading" ref={loaderRef}><img src={PokeballGif} alt="pokeball" width={64} /></p>
                 </div>
             </div>
         </div>

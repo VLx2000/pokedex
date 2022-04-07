@@ -48,3 +48,11 @@
     border-radius: 10px;
     border: solid 3px rgba(0, 0, 0, 0.199);
 }
+
+.cardNCarregado {
+    text-align: center;
+}
+
+.cardNCarregado img {
+    text-align: center;
+}

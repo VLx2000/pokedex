@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './styles.css';
 import { colors } from "../../utils/poke_colors";
+import PokeballGif from '../../assets/pokeball.gif';
 
 const PokemonCard = (props) => {
     
@@ -38,7 +39,7 @@ const PokemonCard = (props) => {
                     </p>
                 </div>
             :   
-                <div>Carregando Pokemon...</div>
+                <div className="cardNCarregado"><img src={PokeballGif} alt="pokeball" width={256} /></div>
             }
         </>
     )
