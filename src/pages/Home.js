@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import PokemonCard from "../components/PokemonCard";
-//import PokeballGif from '../assets/pokeball.gif';
+import PokeballGif from '../assets/pokeball.gif';
 import './Home.css';
 
 function Home() {
@@ -13,6 +13,7 @@ function Home() {
 	const loaderRef = useRef(null);
 
 	useEffect(() => {
+		var load = document.getElementById('loading');
 		axios
 			.get(`${process.env.REACT_APP_API_URL}pokemon`, {
 				params: {
@@ -21,8 +22,8 @@ function Home() {
 			})
 			.then(response => {
 				const data = response.data;
-				if (data.results.length > 120) {
-					document.getElementById('loading').innerHTML = "Os Pokemon acabaram";
+				if (data.results.length > 1126) {
+					load.style = 'display: none';
 					return;
 				}
 				//console.log(data.results);
@@ -34,8 +35,8 @@ function Home() {
 	useEffect(() => {
 		const options = {
 			root: null,
-			rootMargin: "20px",
-			threshold: 1.0
+			rootMargin: "0px",
+			threshold: 1.0,
 		};
 
 		const observer = new IntersectionObserver((entities) => {
@@ -51,23 +52,22 @@ function Home() {
 		}
 	}, []);
 
-	if (!loading)
-		return (
-			<div id="home">
-				<Navbar setLista_pokemon={setLista_pokemon} />
-				<div className="container">
-					<div id="resultados" style={{display: 'none'}}></div>
-					<div className="row">
-						{lista_pokemon.map(pokemon => (
-							<div key={pokemon.name} className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
-								<PokemonCard pokemon={pokemon} />
-							</div>
-						))}
-						<p id="loading" ref={loaderRef}>{/* <img src={PokeballGif} alt="pokeball" width={64} /> */}</p>
-					</div>
+	return (
+		<div id="home">
+			<Navbar setLista_pokemon={setLista_pokemon}/>
+			<div className="container">
+				<div id="resultados" style={{ display: 'none' }}></div>
+				<div className="row">
+					{!loading && lista_pokemon.map(pokemon => (
+						<div key={pokemon.name} className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
+							<PokemonCard pokemon={pokemon} />
+						</div>
+					))}
+					<p id="loading" ref={loaderRef}><img src={PokeballGif} alt="pokeball" width={64} /></p>
 				</div>
 			</div>
-		);
+		</div>
+	);
 }
 
 export default Home;

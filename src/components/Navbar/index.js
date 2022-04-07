@@ -21,6 +21,7 @@ function Topbar(props) {
 				let res = document.getElementById('resultados');
 				res.innerHTML = selecionados.length + ' resultados <a href="/pokedex">Limpar</a>';
 				res.style = "display: block;";
+				document.getElementById('loading').style = 'display: none;';
 			});
 	}
 
