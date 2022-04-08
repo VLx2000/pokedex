@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar";
-import PokemonCard from "../components/PokemonCard";
-import PokeballGif from '../assets/pokeball.gif';
+import Navbar from '@components/Navbar';
+import PokemonCard from '@components/PokemonCard';
+import PokeballGif from '@assets/pokeball.gif';
 import './Home.css';
 
 function Home() {

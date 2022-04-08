@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Nav, Navbar, Container, Form, FormControl, Button } from 'react-bootstrap';
-import { ReactComponent as GithubIcon } from '../../assets/img/github.svg';
+import { ReactComponent as GithubIcon } from '@assets/img/github.svg';
 import './styles.css'
 
 function Topbar(props) {

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './styles.css';
-import { colors } from "../../utils/poke_colors";
-import PokeballGif from '../../assets/pokeball.gif';
+import { colors } from '@utils/poke_colors';
+import PokeballGif from '@assets/pokeball.gif';
 
-const PokemonCard = (props) => {
+function PokemonCard(props) {
     
     const pokemon = props.pokemon;
     const [stats, setStat] = useState();
