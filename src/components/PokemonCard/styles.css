@@ -1,16 +1,13 @@
 .card {
-    /* background-image: url(../../../public/fundo_card.jpg);
-    background-position: center; */
     background-color: #f2f2f2 !important;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.514);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.199);
     border-radius: 14px !important;
     border-width: 5px !important;
     margin-bottom: 30px;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 100ms ease-in-out, color 100ms ease-in-out;
 }
 
 .card:hover {
-    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.644);
     transform: translateY(-6px);
     cursor: pointer;
 }
@@ -31,6 +28,7 @@
 
 .id {
     font-style: italic;
+    font-weight: bolder;
     border-radius: 0 0px 0 14px;
     padding-block: 4px;
     padding-inline: 10px;
@@ -46,7 +44,7 @@
     padding: 8px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.219);
     border-radius: 10px;
-    border: solid 3px rgba(0, 0, 0, 0.199);
+    font-weight: bolder;
 }
 
 .cardNCarregado {

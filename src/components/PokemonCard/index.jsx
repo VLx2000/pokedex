@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Radium from 'radium';
 import './styles.css';
-import { colors } from '@utils/poke_colors';
+import { padrao, desaturada, contrastada } from '@utils/poke_colors';
 import PokeballGif from '@assets/pokeball.gif';
 
 function PokemonCard(props) {
     
     const pokemon = props.pokemon;
     const [stats, setStat] = useState();
-    const [color, setColor] = useState('white');
+    const [color, setColor] = useState('normal');
 
     useEffect(() => {
         axios
@@ -21,20 +22,41 @@ function PokemonCard(props) {
             })
     }, [pokemon.url]);
 
-    const pokemonColor = colors[color];
+    const corPadrao = padrao(color);
+    const corDesaturada = desaturada(color);
+    const corContrastada = contrastada(color);    
+
+    const styleCard = {
+        borderColor: corPadrao,
+        ':hover': { boxShadow: "0 0 15px 10px" + corDesaturada, },
+        ':active': { boxShadow: "0 0 15px 8px" + corPadrao, },
+    }
+
+    const styleNome = {
+        color: corContrastada,
+    }
+
+    const styleId = {
+        backgroundColor: corPadrao, color: corContrastada,
+    }
+
+    function styleTipo(color) {
+        return {backgroundColor: desaturada(color), color: contrastada(color),}
+    }
 
     return(
         <>
             {(typeof stats != 'undefined') ? 
-                <div className="card" style={{borderColor: pokemonColor}}>
+                <div className="card" style={styleCard}>
                     <p className="topCard">
-                        <span className="nome" style={{color: pokemonColor}}>{pokemon.name}</span>
-                        <span className="id" style={{backgroundColor: pokemonColor}}>#{stats.id}</span>
+                        <span className="nome" style={styleNome}>{pokemon.name}</span>
+                        <span className="id" style={styleId}>#{stats.id}</span>
                     </p>
                     <img src={stats.sprites.other["official-artwork"].front_default} alt={stats.sprites.front_default} />
                     <p className="tipos">
                         {(stats.types.map(types =>  
-                            <span className="tipo" key={types.type.name} style={{backgroundColor: colors[types.type.name]}}>{types.type.name}</span>
+                            <span className="tipo" key={types.type.name} 
+                                style={styleTipo(types.type.name)}>{types.type.name}</span>
                         ))}
                     </p>
                 </div>
@@ -45,4 +67,4 @@ function PokemonCard(props) {
     )
 }
 
-export default PokemonCard;
+export default Radium(PokemonCard);
