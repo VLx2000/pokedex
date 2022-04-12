@@ -1,15 +1,18 @@
 .card {
-    background-color: #f2f2f2 !important;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.199);
-    border-radius: 14px !important;
-    border-width: 5px !important;
+    /* background-color: #f2f2f2 !important; */
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.199);
+    border-radius: 20px !important;
+    border-width: 0px !important;
     margin-bottom: 30px;
     transition: box-shadow 100ms ease-in-out, color 100ms ease-in-out;
 }
 
 .card:hover {
-    transform: translateY(-6px);
     cursor: pointer;
+}
+
+.card:target {
+    animation: spin 1000ms linear infinite;
 }
 
 .topCard {
@@ -19,17 +22,18 @@
 }
 
 .nome {
+    font-size: large;
     font-weight: bold;
     text-transform: capitalize;
     padding-block: 4px;
     padding-inline: 10px;
-    overflow: hidden;
 }
 
 .id {
+    font-size: large;
     font-style: italic;
     font-weight: bolder;
-    border-radius: 0 0px 0 14px;
+    border-radius: 0 20px 0 20px;
     padding-block: 4px;
     padding-inline: 10px;
 }
@@ -53,4 +57,13 @@
 
 .cardNCarregado img {
     text-align: center;
+}
+
+@keyframes spin {
+    0% {
+         transform: rotateY(0deg);
+    }
+    100% {
+         transform: rotateY(360deg);
+    }
 }

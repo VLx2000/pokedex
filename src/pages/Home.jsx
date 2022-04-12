@@ -80,7 +80,7 @@ function Home() {
 				<div id="resultados" style={{ display: 'none' }}></div>
 				<div className="row">
 					{!loading && lista_pokemon.map(pokemon => (
-						<div key={pokemon.name} className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
+						<div key={pokemon.name} className='col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3'>
 							<PokemonCard pokemon={pokemon} />
 						</div>
 					))}

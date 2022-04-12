@@ -1,7 +1,6 @@
-/* import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from '@components/Navbar';
-import PokeballGif from '@assets/pokeball.gif';
 
 function Specs(props) {
 
@@ -23,24 +22,18 @@ function Specs(props) {
 				setPokemon(data.results);
 				setLoading(false);
 			});
-	}, []);
+	}, [pokemonId]);
 
 	return (
-		<div id="home">
+		<div id="specs">
 			<Navbar />
 			<div className="container">
-				<div id="resultados" style={{ display: 'none' }}></div>
-				<div className="row">
-					{!loading && lista_pokemon.map(pokemon => (
-						<div key={pokemon.name} className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
-							<PokemonCard pokemon={pokemon} />
-						</div>
-					))}
-					<p id="loading" ref={loaderRef}><img src={PokeballGif} alt="pokeball" width={64} /></p>
-				</div>
+					{!loading && (
+						<div>{pokemon.nome}</div>
+					)}
 			</div>
 		</div>
 	);
 }
 
-export default Specs; */
+export default Specs;
