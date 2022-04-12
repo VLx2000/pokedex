@@ -1,34 +1,9 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { Nav, Navbar, Container, Form, FormControl, Button } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 import { ReactComponent as GithubIcon } from '@assets/img/github.svg';
+import Search from '@components/Search';
 import './styles.css'
 
 function Topbar(props) {
-
-	const [search, setSearch] = useState('');
-
-	function pesquisarPokemon(event) {
-		event.preventDefault();
-		axios
-			.get(`${process.env.REACT_APP_API_URL}pokemon?limit=2000`)
-			.then(response => {
-				const data = response.data;
-				let selecionados = data.results.filter(pokemon => 
-					pokemon.name.includes(search) || pokemon.url.substring(33,).includes(search));
-				props.setLista_pokemon(selecionados);
-				//console.log(selecionados)
-				let res = document.getElementById('resultados');
-				res.innerHTML = selecionados.length + ' resultados <a href="/pokedex">Limpar</a>';
-				res.style = "display: block;";
-				document.getElementById('loading').style = 'display: none;';
-			});
-	}
-
-	function handleSearchChange(event) {
-		setSearch(event.target.value.toLowerCase());
-	}
-
 	return (
 		<Navbar bg="dark" variant='dark' expand="lg" sticky="top">
 			<Container>
@@ -47,17 +22,7 @@ function Topbar(props) {
 							</div>
 						</Nav.Link>
 					</Nav>
-					<Form className="d-flex" onSubmit={pesquisarPokemon}>
-						<FormControl
-							id="forms"
-							type="search"
-							placeholder="filtrar por nome/número..."
-							className="me-2"
-							aria-label="Search"
-							onChange={handleSearchChange}
-						/>
-						<Button variant="outline-success" type='submit'>Procurar</Button>
-					</Form>
+					<Search setLista_pokemon={props.setLista_pokemon} />
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>

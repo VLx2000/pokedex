@@ -10,6 +10,8 @@ function Home() {
 	const [lista_pokemon, setLista_pokemon] = useState('undefined');
 	const [currentPage, setCurrentPage] = useState(1);
 	const [loading, setLoading] = useState(true);
+	const [showButton, setShowButton] = useState(false);
+
 	const loaderRef = useRef(null);
 
 	useEffect(() => {
@@ -52,6 +54,25 @@ function Home() {
 		}
 	}, []);
 
+	/* https://www.kindacode.com/article/how-to-create-a-scroll-to-top-button-in-react/ */
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			if (window.pageYOffset > 300) {
+				setShowButton(true);
+			} else {
+				setShowButton(false);
+			}
+		});
+	}, []);
+
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	};
+	/***/
+
 	return (
 		<div id="home">
 			<Navbar setLista_pokemon={setLista_pokemon}/>
@@ -66,6 +87,11 @@ function Home() {
 					<p id="loading" ref={loaderRef}><img src={PokeballGif} alt="pokeball" width={64} /></p>
 				</div>
 			</div>
+			{showButton && (
+				<button onClick={scrollToTop} className="back-to-top">
+					&#8593;
+				</button>
+			)}
 		</div>
 	);
 }

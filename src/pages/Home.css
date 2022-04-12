@@ -11,3 +11,20 @@
     text-align: center;
     margin-block: 30px;
 }
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 50px;
+    background: rgba(255, 255, 255, 0.514);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 5px 10px #ccc;
+}
+  
+.back-to-top:hover {
+    background: #ffcf30;
+}
