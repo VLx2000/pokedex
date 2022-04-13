@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  background: url(./assets/img/pokeball.svg) left top no-repeat fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
