@@ -13,7 +13,7 @@ code {
 }
 
 #root {
-  background: url(./assets/img/pokeball.svg) left top no-repeat fixed;
-  background-size: cover;
+  background: url(./assets/img/pattern.png);
+  background-size: repeat;
   min-height: 100vh;
 }

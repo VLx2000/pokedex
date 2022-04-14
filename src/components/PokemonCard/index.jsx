@@ -58,13 +58,17 @@ function PokemonCard(props) {
                             <span className="nome" style={styleNome}>{pokemon.name}</span>
                             <span className="id" style={styleId}>#{atributos.id}</span>
                         </p>
-                        <img src={atributos.sprites.front_default} alt={atributos.sprites.other["official-artwork"].front_d} />
-                        <p className="tipos">
-                            {(atributos.types.map(types =>
-                                <span className="tipo" key={types.type.name}
-                                    style={styleTipo(types.type.name)}>{types.type.name}</span>
-                            ))}
-                        </p>
+                        <div className="bottomCard">
+                            <div>
+                                <img className="card-img" src={atributos.sprites.front_default} alt={atributos.sprites.other["official-artwork"].front_d} />
+                            </div>
+                            <div className="tipos">
+                                {(atributos.types.map(types =>
+                                    <p className="tipo" key={types.type.name}
+                                        style={styleTipo(types.type.name)}>{types.type.name}</p>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 :

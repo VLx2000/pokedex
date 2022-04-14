@@ -4,6 +4,8 @@
     border-width: 0px !important;
     margin-bottom: 30px;
     transition: box-shadow 100ms ease-in-out, color 100ms ease-in-out;
+    background: url(../../assets/img/pokeball.svg) left top no-repeat ;
+    background-size: 400px;
 }
 
 .card:hover {
@@ -36,10 +38,16 @@
     padding-inline: 10px;
 }
 
-.tipos {
+.bottomCard {
     text-align: center;
+}
+
+.tipos {
     text-transform: uppercase;
-    overflow-wrap: initial;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 .tipo {
@@ -56,4 +64,16 @@
 
 .cardNCarregado img {
     text-align: center;
+}
+
+@media (max-width: 575px)
+{
+    .bottomCard {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .tipos {
+       display: grid;
+    }
 }
