@@ -4,7 +4,8 @@ import Navbar from '@components/Navbar';
 import Filtro from '@components/Filtro';
 import PokemonCard from '@components/PokemonCard';
 import PokeballGif from '@assets/pokeball.gif';
-import './Home.css';
+import { Link } from 'react-router-dom';
+import './styles.css';
 
 function Home() {
 
@@ -82,8 +83,10 @@ function Home() {
 				<div id="resultados" style={{ display: 'none' }}></div>
 				<div className="row">
 					{!loading && lista_pokemon.map(pokemon => (
-						<div key={pokemon.url} className='col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3'>
-							<PokemonCard pokemon={pokemon} />
+						<div key={pokemon.name} className='col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3'>
+							<Link to={ "/pokemon/" + pokemon.name }> 
+								<PokemonCard pokemon={pokemon} />
+							</Link>
 						</div>
 					))}
 					<p id="loading" ref={loaderRef}><img src={PokeballGif} alt="pokeball" width={64} /></p>

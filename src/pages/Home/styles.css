@@ -28,3 +28,7 @@
 .back-to-top:hover {
     background: #ffcf30;
 }
+
+a {
+    text-decoration: none !important;
+}

@@ -66,3 +66,41 @@ export function desaturada(type) { return colours_des[type] || '#7779'; }
 export function contrastada(type) { return colours_con[type] || '#999'; }
 
 //baseado em https://gist.github.com/apaleslimghost/0d25ec801ca4fc43317bcff298af43c3
+
+var corPadrao = '';
+var corDesaturada = '';
+var corContrastada = '';
+
+function setColors(type) {
+	corPadrao = padrao(type);
+	corDesaturada = desaturada(type);
+	corContrastada = contrastada(type);
+}
+
+export function styleCard(type) {
+	setColors(type);
+	return {
+		borderColor: corPadrao,
+		backgroundColor: corDesaturada,
+		':hover': { boxShadow: "0 0 15px 10px" + corPadrao, },
+		':active': { boxShadow: "0 0 15px 8px" + corContrastada, },
+	}
+}
+
+export function styleNome(type) {
+	setColors(type);
+	return {color: corContrastada,}
+}
+
+export function styleId(type) {
+	setColors(type);
+	return {backgroundColor: corPadrao, color: corContrastada,}
+}
+
+export function styleTipo(type) {
+	setColors(type);
+	return {
+		backgroundColor: corPadrao,
+		color: corContrastada,
+	}
+}

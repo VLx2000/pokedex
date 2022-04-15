@@ -11,14 +11,18 @@ function Search(props) {
             .get(`${process.env.REACT_APP_API_URL}pokemon?limit=2000`)
             .then(response => {
                 const data = response.data;
-                let selecionados = data.results.filter(pokemon =>
-                    pokemon.name.includes(search) || pokemon.url.substring(33,).includes(search));
-                props.setLista_pokemon(selecionados);
-                //console.log(selecionados)
-                let res = document.getElementById('resultados');
-                res.innerHTML = selecionados.length + ' resultados <a href="/pokedex">Limpar</a>';
-                res.style = "display: block;";
-                document.getElementById('loading').style = 'display: none;';
+                if (search !== ''){
+                    let selecionados  = data.results.filter(pokemon =>
+                        pokemon.name.includes(search) || pokemon.url.substring(33,).includes(search));
+
+                    props.setLista_pokemon(selecionados);
+                    //console.log(selecionados);
+
+                    let res = document.getElementById('resultados');
+                    res.innerHTML = selecionados.length + ' resultados <a href="/pokedex">Limpar</a>';
+                    res.style = "display: block;";
+                    document.getElementById('loading').style = 'display: none;';
+                }
             });
     }
 
