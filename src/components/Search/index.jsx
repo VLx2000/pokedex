@@ -31,7 +31,7 @@ function Search(props) {
             <FormControl
                 id="forms"
                 type="search"
-                placeholder="filtrar por nome/número..."
+                placeholder="nome/número do pokémon"
                 className="me-2"
                 aria-label="Search"
                 onChange={handleSearchChange}

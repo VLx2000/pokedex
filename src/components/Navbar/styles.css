@@ -8,8 +8,12 @@
 }
 
 .pokedex-contact-link {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 4px;
     font-size: 14px;
     font-weight: 700;
     color: #f2f2f2;
+}
+
+.logo {
+    margin-right: 20px;
 }

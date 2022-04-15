@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Navbar from '@components/Navbar';
+import Filtro from '@components/Filtro';
 import PokemonCard from '@components/PokemonCard';
 import PokeballGif from '@assets/pokeball.gif';
 import './Home.css';
@@ -76,11 +77,12 @@ function Home() {
 	return (
 		<div id="home">
 			<Navbar setLista_pokemon={setLista_pokemon}/>
+			<Filtro setLista_pokemon={setLista_pokemon}/>
 			<div className="container">
 				<div id="resultados" style={{ display: 'none' }}></div>
 				<div className="row">
 					{!loading && lista_pokemon.map(pokemon => (
-						<div key={pokemon.name} className='col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3'>
+						<div key={pokemon.url} className='col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3'>
 							<PokemonCard pokemon={pokemon} />
 						</div>
 					))}

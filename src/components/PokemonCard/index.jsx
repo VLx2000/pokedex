@@ -13,8 +13,9 @@ function PokemonCard(props) {
     const [virar, setVirar] = useState(false);
 
     useEffect(() => {
+        const url = pokemon.url.replace('-species', '');
         axios
-            .get(pokemon.url)
+            .get(url)
             .then(response => {
                 const data = response.data;
                 //console.log(data);

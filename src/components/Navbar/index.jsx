@@ -7,17 +7,18 @@ function Topbar(props) {
 	return (
 		<Navbar bg="dark" variant='dark' expand="lg" sticky="top">
 			<Container>
-				<Navbar.Brand href="/pokedex">
-					<h1>
-						<img src="https://fontmeme.com/permalink/220407/3552117bf42964527c1f808e280e7bfc.png" alt="Pokédex" border="0" />
+				<a href="/pokedex">
+					<h1 className='logo'>
+						<img src="https://fontmeme.com/permalink/220407/3552117bf42964527c1f808e280e7bfc.png" 
+							alt="Pokédex" border="0" width={110} />
 					</h1>
-				</Navbar.Brand>
+				</a>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
 						<Nav.Link className='pokedex-contact' href="https://github.com/VLx2000">
 							<div className='pokedex-contact-container'>
-								<GithubIcon />
+								<GithubIcon width={20} />
 								<p className='pokedex-contact-link'>/VLx2000</p>
 							</div>
 						</Nav.Link>

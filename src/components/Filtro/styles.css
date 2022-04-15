@@ -1,0 +1,40 @@
+.filtro button {
+    border-width: 0;
+    border-radius: 10px !important;
+    font-weight: bolder !important;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 22%);
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.filtroBotao:hover {
+    transform: scale(1.1) !important;
+}
+
+.accordion-item {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+@media (min-width: 992px)
+{
+    .filtro {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .accordion-item:first-child {
+        margin-right: 16px;
+    }
+
+    .accordion-item:nth-child(2) {
+        margin-inline: 8px;
+    }
+
+    .accordion-item:last-child {
+        margin-left: 16px;
+    }
+}
