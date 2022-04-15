@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from 'react-router-dom';
+import PokeballGif from '@assets/pokeball.gif';
 import { styleCard, styleNome, styleId, styleTipo } from '@utils/poke_colors';
 import './styles.css';
 
@@ -27,7 +28,7 @@ function Specs() {
 	return (
 		<div id="specs" className="container">
 			<Link to="/pokedex">Voltar</Link>
-			{!loading && (
+			{!loading ? (
 				<div className="infoSpecs">
 					<div className="card" key={1} style={styleCard(color)}>
 						<div className="topCard">
@@ -65,8 +66,9 @@ function Specs() {
 						</div>
 					</div>
 				</div>
-
-			)}
+			) :
+                <div className="cardNCarregado"><img src={PokeballGif} alt="pokeball" width={256} /></div>
+			}
 		</div>
 	);
 }
