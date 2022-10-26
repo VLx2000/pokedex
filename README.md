@@ -4,13 +4,14 @@
 ![img](img.png)
 
 ### Tecnologias utilizadas
+- React
 - TypeScript
 - Bootstrap
 - GraphQL
 - Axios
 - React Router Dom
 
-### [Link para o site](https://vlx2000.github.io/pokedex/)
+### [Link para o site](https://victorl-pokedex.netlify.app/)
 
 ### Para executar localmente
 ```npm install && npm run dev```
