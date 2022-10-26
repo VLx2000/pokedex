@@ -10,7 +10,12 @@
 
 .card:hover {
     cursor: pointer;
+    box-shadow: 0 0 15px 10px rgb(128, 128, 128);
 }
+
+.card:active { 
+    box-shadow: 0 0 15px 8px rgb(204, 204, 204);
+ }
 
 .topCard {
     display: flex;

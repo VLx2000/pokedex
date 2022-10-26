@@ -17,7 +17,7 @@ const colours = {
 	dark: '#705746',
 	steel: '#B7B7CE',
 	fairy: '#D685AD',
-};
+} as ITypes;
 
 const colours_des = {
 	normal: '#ceceb5',
@@ -38,7 +38,7 @@ const colours_des = {
 	dark: '#aea097',
 	steel: '#d6d6e2',
 	fairy: '#e8b9d0',
-};
+} as ITypes;
 
 const colours_con = {
 	normal: '#53533c',
@@ -59,11 +59,15 @@ const colours_con = {
 	dark: '#3f3127',
 	steel: '#585863',
 	fairy: '#6a4256',
-};
+} as ITypes;
 
-export function padrao(type) { return colours[type] || '#777'; }
-export function desaturada(type) { return colours_des[type] || '#7779'; }
-export function contrastada(type) { return colours_con[type] || '#999'; }
+interface ITypes {
+	[index: string]: string;
+}
+
+export const padrao = (type: string) => colours[type] ?? '#777';
+export const desaturada = (type: string) => colours_des[type] ?? '#7779';
+export const contrastada = (type: string) => colours_con[type] ?? '#999';
 
 //baseado em https://gist.github.com/apaleslimghost/0d25ec801ca4fc43317bcff298af43c3
 
@@ -71,13 +75,13 @@ var corPadrao = '';
 var corDesaturada = '';
 var corContrastada = '';
 
-function setColors(type) {
+function setColors(type: string) {
 	corPadrao = padrao(type);
 	corDesaturada = desaturada(type);
 	corContrastada = contrastada(type);
 }
 
-export function styleCard(type) {
+export function styleCard(type: string) {
 	setColors(type);
 	return {
 		borderColor: corPadrao,
@@ -87,17 +91,17 @@ export function styleCard(type) {
 	}
 }
 
-export function styleNome(type) {
+export function styleNome(type: string) {
 	setColors(type);
 	return {color: corContrastada,}
 }
 
-export function styleId(type) {
+export function styleId(type: string) {
 	setColors(type);
 	return {backgroundColor: corPadrao, color: corContrastada,}
 }
 
-export function styleTipo(type) {
+export function styleTipo(type: string) {
 	setColors(type);
 	return {
 		backgroundColor: corPadrao,
